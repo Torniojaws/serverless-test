@@ -28,9 +28,9 @@ you want to deploy.
 1. Create an IAM role in AWS Console (`Users -> Add user`) with name `my-name`
 1. Give it `programmatic access`
 1. Then `Attach existing policies` and check `Administrator access`
-1. Save the AWS `Access Key ID` and `Access Secret Key`
-1. Then add the Key and Secret to the serverless config:
-  `serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx`
+1. Save the AWS `Access Key ID` and `Access Secret Key`, and keep them for example in your env
+1. Then add the Key and Secret to the serverless config from your env variables:
+  `serverless config credentials --provider aws --key AWS_ACCESS_KEY --secret AWS_SECRET_KEY`
 1. Create a service: `serverless create --template aws-nodejs --path my-service`
 1. Deploy the function to AWS: `serverless deploy -v`
 1. Call it from the command line: `serverless invoke -f hello -l`
